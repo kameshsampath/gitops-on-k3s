@@ -35,7 +35,7 @@ envsubst < "$GITOPS_HOME/k8s/core/app.yaml" | kubectl apply -f -
 #   --username "${ARGO_ADMIN_USER}" \
 #   --password="${ARGO_ADMIN_PASSWORD}"
 
-# argocd app sync --assumeYes --timeout=600 gitops-on-k3s-apps
+# argocd app sync --core --plaintext --assumeYes --timeout=600 gitops-on-k3s-apps
 
 sleep 15
 
