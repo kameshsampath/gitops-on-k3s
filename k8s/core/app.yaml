@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-with-k3s-apps
+  name: gitops-on-k3s-apps
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    name: gitops-with-k3s
+    name: gitops-on-k3s
 spec:
   project: default
   source:
@@ -14,7 +14,7 @@ spec:
     targetRevision:  ${GITEA_GITOPS_CORE_REPO_VERSION}
     path: apps
     helm:
-      releaseName: gitops-with-k3s-apps
+      releaseName: gitops-on-k3s-apps
       valueFiles:
        - ../helm_vars/core/values.yaml
       version: v3

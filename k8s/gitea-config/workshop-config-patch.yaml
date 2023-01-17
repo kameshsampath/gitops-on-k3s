@@ -18,4 +18,4 @@ data:
         addKubernetesSecret: true
         secretNamespace: drone
         repos:
-          - https://github.com/kameshsampath/gitops-with-k3s.git
+          - https://github.com/kameshsampath/gitops-on-k3s.git

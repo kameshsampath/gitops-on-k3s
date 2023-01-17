@@ -4,12 +4,12 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: gitea-gitops-with-k3s-repo
+  name: gitea-gitops-on-k3s-repo
   namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
-  url: {{ .Values.gitea.server.outClusterURL }}/{{ .Values.gitea.username }}/gitops-with-k3s.git
+  url: {{ .Values.gitea.server.outClusterURL }}/{{ .Values.gitea.username }}/gitops-on-k3s.git
   password: {{ .Values.gitea.username }}
   username: {{ .Values.gitea.password }}
 ---

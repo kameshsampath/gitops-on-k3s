@@ -25,7 +25,7 @@ PUSH_GITEA_URL="http://${GITEA_USER}:user-01%40123@host.docker.internal:30950"
 
 git add .
 git commit -a -m "Init Gitops"
-git push "${PUSH_GITEA_URL}/${GITEA_USER}/gitops-with-k3s.git" "${DRAG_TARGET_VERSION}"
+git push "${PUSH_GITEA_URL}/${GITEA_USER}/gitops-on-k3s.git" "${DRAG_TARGET_VERSION}"
 popd 
 
 envsubst < "$GITOPS_HOME/k8s/core/app.yaml" | kubectl apply -f -
@@ -35,7 +35,7 @@ argocd login --plaintext "host.docker.internal:30080" \
   --username "${ARGO_ADMIN_USER}" \
   --password="${ARGO_ADMIN_PASSWORD}"
 
-argocd app sync --assumeYes --timeout=600 gitops-with-k3s-apps
+argocd app sync --assumeYes --timeout=600 gitops-on-k3s-apps
 
 sleep 15
 

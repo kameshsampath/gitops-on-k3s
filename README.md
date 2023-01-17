@@ -1,14 +1,13 @@
-# GitOps on k3s
+# GitOps on K3s
 
-Setup kit to get started with [Gitops]() on your laptops using,
+Setup kit to get started with [Gitops](https://about.gitlab.com/topics/gitops/) on your laptops using,
 
-- [Drone](https://drone.io)
-- With k3s managed registry
-- [ArgoCD](https://argo-cd.readthedocs.io/)
-- [Gitea](https://gitea.io/)
+- [k3D](https://k3d.io) as the Kubernetes Cluster
+- [k3s managed registry](https://k3d.io/v5.4.6/usage/registries/) for local container registry
+- [Drone](https://drone.io) for Continuous Integration
+- [ArgoCD](https://argo-cd.readthedocs.io/) for Gitops
+- [Gitea](https://gitea.io/) for Source Control Management
   
-[K3D](k3d.io/) is used to setup **[k3s](https://k3s.io)** based Kubernetes Cluster
-
 This demo also shows how to use the Argo CD [declarative setup](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/) to setup [Drone](https://drone.io) with Drone Kubernetes runner.
 
 The stack also deploys [ArgoCD Image Updater](https://argocd-image-updater.readthedocs.io/en/stable) to enable updating the application images via GitOps.
