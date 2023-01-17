@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# sanity checks
+printf "\nRegistry Sanity Checks\n"
+
+# Docker push
+docker pull gcr.io/google-samples/hello-app:1.0
+docker tag gcr.io/google-samples/hello-app:1.0 "localhost:$REGISTRY_PORT/hello-app:1.0"
+docker push "localhost:$REGISTRY_PORT/hello-app:1.0"
+
+# Kubectl
+kubectl 
+kubectl create deployment hello-server --image="k3d-${REGISTRY_NAME}:$REGISTRY_PORT/hello-app:1.0"
+kubectl rollout status deployment.apps/hello-server --timeout=30s
+kubectl delete deployment.apps/hello-server

@@ -1,0 +1,4 @@
+mirrors:
+  "myregistry.localhost":
+    endpoint:
+      - http://localhost:$REGISTRY_PORT
