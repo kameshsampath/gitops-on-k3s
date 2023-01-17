@@ -62,7 +62,7 @@ The following applications forms the core/base applications for effective GitOps
 
 A successful ArgoCD Deployment should look like,
 
-![ArgoCD Apps](./docs/images/drag_apps.png)
+![ArgoCD Apps](./docs/images/app_of_apps.png)
 
 ### Do some GitOps
 

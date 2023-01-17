@@ -2,7 +2,7 @@ destination:
   server: https://kubernetes.default.svc
 source:
   repoURL: ${GITEA_GITOPS_CORE_REPO}
-  targetRevision: ${DRAG_TARGET_VERSION}
+  targetRevision: ${GITEA_GITOPS_CORE_REPO_VERSION}
 gitea:
   server:
     outClusterURL: ${GITEA_URL}

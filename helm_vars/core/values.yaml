@@ -2,7 +2,7 @@ destination:
   server: https://kubernetes.default.svc
 source:
   repoURL: http://gitea-127.0.0.1.sslip.io:30950/user-01/gitops-on-k3s.git
-  targetRevision: 
+  targetRevision: main
 gitea:
   server:
     outClusterURL: http://gitea-127.0.0.1.sslip.io:30950
@@ -20,7 +20,7 @@ drone:
     host: http://drone-127.0.0.1.sslip.io:30980
     namespace: drone
     hostAliases:
-      - ip: 10.43.28.114
+      - ip: 10.43.207.214
         hostnames:
           - gitea-127.0.0.1.sslip.io
     admin:

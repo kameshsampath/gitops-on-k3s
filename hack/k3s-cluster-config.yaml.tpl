@@ -3,7 +3,7 @@ kind: Simple
 metadata:
   name: ${K3D_CLUSTER_NAME}
 servers: 1
-# agents: 2
+agents: 1
 image: rancher/k3s:${K3S_VERSION}
 network: ${DOCKER_NETWORK_NAME}
 ports:
