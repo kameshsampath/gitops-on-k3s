@@ -4,14 +4,14 @@ set -euo pipefail
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-# shellcheck source=/dev/null
-. "${SCRIPT_DIR}/check-registry"
+# # shellcheck source=/dev/null
+# . "${SCRIPT_DIR}/check-registry"
 
-## Installs
-# shellcheck source=/dev/null
-. "${SCRIPT_DIR}/install-gitea"
-# shellcheck source=/dev/null
-. "${SCRIPT_DIR}/check-gitea"
+# ## Installs
+# # shellcheck source=/dev/null
+# . "${SCRIPT_DIR}/install-gitea"
+# # shellcheck source=/dev/null
+# . "${SCRIPT_DIR}/check-gitea"
 
 # shellcheck source=/dev/null
 . "${SCRIPT_DIR}/install-argocd"

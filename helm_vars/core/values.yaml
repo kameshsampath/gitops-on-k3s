@@ -1,0 +1,38 @@
+destination:
+  server: https://kubernetes.default.svc
+source:
+  repoURL: http://gitea-127.0.0.1.sslip.io:30950/user-01/gitops-on-k3s.git
+  targetRevision: 
+gitea:
+  server:
+    outClusterURL: http://gitea-127.0.0.1.sslip.io:30950
+    inClusterURL: 
+  oAuthSecret: demo-oauth-user-01-secret
+  username: user-01
+  password: user-01@123
+drone:
+  docker:
+    runner:
+      insecureRegistries:
+        - "myregistry.localhost"
+  server:
+    version: 0.6.0
+    host: http://drone-127.0.0.1.sslip.io:30980
+    namespace: drone
+    hostAliases:
+      - ip: 10.43.28.114
+        hostnames:
+          - gitea-127.0.0.1.sslip.io
+    admin:
+      enable: true
+argocd:
+  imageUpdater:
+    versio: 0.8.0
+    logLevel: debug
+    registries:
+      - name: "myregistry.localhost"
+        prefix: "myregistry.localhost"
+        api_url: "http://myregistry.localhost"
+        default: true
+        defaultns: example
+        insecure: true
